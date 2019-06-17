@@ -10,9 +10,15 @@ class Cylinder
 {
     public function getVolume($radius, $height)
     {
-        $baseArea = pi() * $radius * $radius;
-        $perimeter = 2 * pi() * $radius;
+        $baseArea = $this->getBaseArea($radius);
+        $perimeter = $this->getPerimeter($radius);
         $volume = $perimeter * $height + 2 * $baseArea;
         return $volume;
+    }
+    function getBaseArea($radius){
+        return pi() * $radius * $radius;
+    }
+    function getPerimeter($radius){
+        return 2 * pi() * $radius;
     }
 }
